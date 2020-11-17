@@ -27,7 +27,7 @@ class Solution:
 if __name__=='__main__':
     max_k, prices = 2, [3,2,6,5,0,3]  # 7
     max_k, prices = 2, [2,4,1]  # 2
-    max_k, prices = 2, [3,3,5,0,0,3,1,4]
+    max_k, prices = 2, [3,3,5,0,0,3,1,4] # 6
     solution = Solution()
     result = solution.maxProfit(max_k, prices)
     print(result)
