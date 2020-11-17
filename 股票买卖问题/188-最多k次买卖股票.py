@@ -13,10 +13,10 @@ class Solution:
 
         n = len(prices)
         if max_k > n / 2: return maxProfit_inf(prices)  # k大于最大次数时，与122题无限次无异
-        dp = [[[-float('inf')]*2]*max_k]*n
+        dp = [[[0] * 2 for _ in range(max_k + 1)] for _ in range(n)]
         for i in range(n):
             for k in range(max_k-1,-1,-1):
-                if i - 1 == -1:
+                if i - 1 == -1:     # 初始值处理
                     dp[i][k][0] = 0
                     dp[i][k][1] = -prices[i]
                     continue
