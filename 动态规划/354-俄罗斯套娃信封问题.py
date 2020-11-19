@@ -23,7 +23,7 @@ class Solution:
             poker = nums[i]
             left, right = 0, piles
             while left < right:
-                mid = (left + right) / 2
+                mid = (left + right) // 2
                 if top[mid] >= poker:
                     right = mid
                 else:
