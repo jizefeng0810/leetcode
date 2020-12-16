@@ -17,8 +17,9 @@ def fib_memory_optimize(memo, n):
     :return: fib value
     """
     if n == 2 or n == 1: return 1
-    if memo[n-1] != 0: return memo[n-1]
-    return fib(n-1) + fib(n-2)
+    if memo[n] != 0: return memo[n]
+    memo[n] = fib_memory_optimize(memo, n-1) + fib_memory_optimize(memo, n-2)
+    return memo[n]
 
 def fib_dp_optimize(n):
     """
@@ -39,7 +40,7 @@ if __name__ == '__main__':
     endtime = time.time()
     print('baoli:', endtime - starttime)
 
-    memo = [0] * n
+    memo = [0] * (n+1)
     starttime = time.time()
     print(fib_memory_optimize(memo, n))
     endtime = time.time()
